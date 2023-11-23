@@ -4,13 +4,21 @@ public class Main {
 
         // BubbleSort(numbers);
 
-        InsertSort(numbers);
+        // InsertSort(numbers);
+
+        SelectionSort(numbers);
 
         PrintList(numbers);
     }
 
     public static void PrintList(int list[]) {
         for (int i = 0; i < list.length; i++) System.out.printf("%d, ", list[i]);
+    }
+
+    public static void Swap(int input[], int pos1, int pos2) {
+        int temp = input[pos1];
+        input[pos1] = input[pos2];
+        input[pos2] = temp;
     }
 
     public static void BubbleSort(int input[]) {
@@ -22,9 +30,7 @@ public class Main {
                 // if it is than swap these numbers
                 if (input[j] > input[j+1]) {
                     // switching numbers
-                    int temp = input[j];
-                    input[j] = input[j+1];
-                    input[j+1] = temp;
+                    Swap(input, j, j+1);
                 }
             }
         }
@@ -48,6 +54,22 @@ public class Main {
             }
             // setting input value on position of j + 1 to key
             input[j + 1] = key;
+        }
+    }
+
+    public static void SelectionSort(int input[]) {
+        for (int i = 0; i < input.length-1; i++) {
+            // getting index of current minimum number
+            int minIndex = i;
+
+            // getting minimum element in the unsorted part of the array
+            for (int j = i + 1; j < input.length-1; i++) {
+                if (input[j] < input[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // switching numbers
+            Swap(input, i, minIndex);
         }
     }
 }
