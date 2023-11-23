@@ -58,12 +58,12 @@ public class Main {
     }
 
     public static void SelectionSort(int input[]) {
-        for (int i = 0; i < input.length-1; i++) {
-            // getting index of current minimum number
+        // getting index of current minimum number
+        for (int i = 0; i < input.length; i++) {
             int minIndex = i;
 
             // getting minimum element in the unsorted part of the array
-            for (int j = i + 1; j < input.length-1; i++) {
+            for (int j = i + 1; j < input.length; i++) {
                 if (input[j] < input[minIndex]) {
                     minIndex = j;
                 }
