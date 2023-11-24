@@ -63,7 +63,7 @@ public class Main {
             int minIndex = i;
 
             // getting minimum element in the unsorted part of the array
-            for (int j = i + 1; j < input.length; i++) {
+            for (int j = i + 1; j < input.length; j++) {
                 if (input[j] < input[minIndex]) {
                     minIndex = j;
                 }
